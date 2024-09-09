@@ -2,53 +2,17 @@
 
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-  darkmode: 'class',
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '600px',
-      // => @media (min-width: 640px) { ... }
-
       md: '720px',
-      // => @media (min-width: 768px) { ... }
-
       lg: '840px',
-      // => @media (min-width: 1024px) { ... }
-
       xl: '960px',
-      // => @media (min-width: 1280px) { ... }
-
       '2xl': '1080px',
-      // => @media (min-width: 1536px) { ... }
     },
     container: {
       center: true,
-    },
-    textColor: {
-      skin: {
-        base: 'rgb(var(--color-text))',
-        active: 'rgb(var(--color-text-active))',
-      },
-    },
-
-    backgroundColor: {
-      skin: {
-        fill: 'rgb(var(--color-fill))',
-        secondary: 'rgb(var(--color-fill-secondary))',
-        card: 'rgb(var(--color-card))',
-        modal: 'rgb(var(--color-modal))',
-      },
-    },
-    textDecorationColor: {
-      skin: {
-        base: 'rgb(var(--color-border))',
-        active: 'rgb(var(--color-text-active))',
-      },
-    },
-    borderColor: {
-      skin: {
-        normal: 'rgb(var(--color-text))',
-        base: 'rgb(var(--color-border))',
-      },
     },
     extend: {
       fontFamily: {
@@ -56,19 +20,23 @@ export default {
         loveLight: ['Love Light', 'cursive'],
       },
       colors: {
-        custom: {
-          title: '#555',
-          subtitle: '#999',
-          hover: '#e0a419',
-          active: '#ff7f50',
-          grey: '#f6f6f6',
-          nav: '#ded6d8',
-          primary: '#edede9',
-          second: '#d6ccc2',
-          third: '#f5ebe0',
-          forth: '#e3d5ca',
-          fifth: '#d5bdaf',
-        },
+        fillLight: 'rgb(241, 241, 241)',
+        fillSecondaryLight: 'rgb(251, 251, 251)',
+        cardLight: 'rgb(241, 241, 241)',
+        textLight: 'rgb(80, 73, 69)',
+        textActiveLight: 'rgb(181, 118, 20)',
+        borderLight: 'rgb(104, 157, 106)',
+        borderActiveLight: 'rgb(14, 192, 124)',
+        modalLight: 'rgb(52, 58, 64)',
+
+        fillDark: 'rgb(40, 40, 40)',
+        fillSecondaryDark: 'rgb(52, 58, 64)',
+        cardDark: 'rgb(40, 42, 54)',
+        textDark: 'rgb(249, 244, 227)',
+        textActiveDark: 'rgb(250, 189, 47)',
+        borderDark: 'rgb(214, 93, 14)',
+        borderActiveDark: 'rgb(7, 102, 120)',
+        modalDark: 'rgb(251, 251, 251)',
       },
     },
   },

@@ -5,7 +5,7 @@ const { pathname } = Astro.url
 const hrefMath = href.split('/')
 const pathnameMatch = pathname.split('/')
 const isActive = hrefMath[1] === pathnameMatch[1]
-
+const THEMES = ['Light', 'Dark', 'System']
 type Child = {
   iconClass?: string
   target?: string
@@ -22,11 +22,11 @@ type Child = {
     }
   </a>
   {childrenArr && childrenArr.length > 0 && (
-    <div class="dropdown cursor-pointer border rounded bg-skin-fill p-4">
-      <ul class="space-y-4 w-28">
+    <div class="dropdown scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md">
+      <ul>
         {
           childrenArr.map((child: Child) =>
-            <li class="text-center hover:text-skin-active select-none">
+            <li class="px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
               <i class={child.iconClass}></i>
               <a target={child.target ? child.target : "_self"} href={child.href}>{child.name}</a>
             </li>

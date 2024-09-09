@@ -3,9 +3,9 @@ import config from '@/consts'
 import HeaderLink from '@components/HeaderLink.astro'
 import MenuBtn from '@components/MenuBtn.astro'
 import SidebarBtn from '@components/SidebarBtn.astro'
-import ThemeSwitch from '@components/ThemeSwitch.astro'
 import I18nKey from '@i18n/i18nKey'
 import { $_t } from '@i18n/translation'
+import ThemeToggle from './ThemeToggle.astro'
 //TODO Refactorizar el código
 // import { getCollectionByName } from '@utils/getCollectionByName'
 // import getCountByCategory from '@utils/getCountByCategory'
@@ -18,7 +18,7 @@ import { $_t } from '@i18n/translation'
 // const tagCount = getCountByTagName(blogs)
 ---
 
-<header class="fixed top-0 w-full bg-skin-fill text-skin-base z-10">
+<header class="fixed top-0 w-full text-gray-600 dark:text-gray-200 z-10">
   <div class="flex items-center justify-between container">
     <div class="block xl:hidden">
       <MenuBtn></MenuBtn>
@@ -30,7 +30,7 @@ import { $_t } from '@i18n/translation'
 
     <div class="flex items-center">
       <div class="hidden xl:block">
-        <div class="flex items-center space-x-5 pr-4">
+        <div class="flex items-center space-x-5 pr-4 text-sm">
           {
             config.$_categories.map(category => (
               <HeaderLink href={category.href} icon={category.iconClass} target={category.target ? category.target : '_self'} childrenArr={category.children ? category.children : []}>{category.name}</HeaderLink>
@@ -38,9 +38,9 @@ import { $_t } from '@i18n/translation'
           }
         </div>
       </div>
-      <ThemeSwitch></ThemeSwitch>
+      <ThemeToggle/>
       <div class="block xl:hidden">
-        <SidebarBtn></SidebarBtn>
+        <SidebarBtn/>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@ import { $_t } from '@i18n/translation'
     {
       config.$_categories.map((category) => (
         <div class="py-2">
-          <a class=" hover:text-skin-active" href={category.href}>
+          <a class=" hover:textActiveLight dark:hover:textActiveDark" href={category.href}>
             <i class={category.iconClass}/>
             <span>{category.name}</span>
           </a>
@@ -60,7 +60,7 @@ import { $_t } from '@i18n/translation'
             {
               category.children && category.children.map(sub =>
                 (
-                  <a class="block hover:text-skin-active" href={sub.href}>
+                  <a class="block hover:textActiveLight dark:hover:textActiveDark" href={sub.href}>
                     <i class={sub.iconClass}/>
                     <span>{sub.name}</span>
                   </a>
@@ -124,3 +124,24 @@ import { $_t } from '@i18n/translation'
 
   </div>
 </header>
+
+<style>
+  header {
+    animation: header-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  header {
+    @apply dark:bg-[#191B33] bg-white/50;
+  }
+
+  @keyframes header-shadown {
+    0% {
+      @apply dark:bg-[#191B33] bg-white/0;
+    }
+    to {
+      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+    }
+  }
+</style>

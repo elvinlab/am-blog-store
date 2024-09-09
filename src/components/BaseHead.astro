@@ -2,7 +2,9 @@
 import '@fontsource/love-light'
 import '@fontsource/onest'
 import '@styles/global.css'
+import { ViewTransitions } from 'astro:transitions'
 import consts from '@/consts'
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 <head>
@@ -40,7 +42,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
   <link rel="sitemap" href="/sitemap-0.xml"/>
   <title>{consts.$_site.title}</title>
-
+  <ViewTransitions />
   <!-- Google tag (gtag.js) -->
   {
     consts.$_settings.ga &&

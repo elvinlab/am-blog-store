@@ -58,58 +58,19 @@ menu {
   }
 }
 
-@layer base {
-/**
-TODO Revisar si data-theme solo funciona con scss
- */
-
-  :root,
-  html[data-theme="light"] {
-    --color-fill: 241, 241, 241;
-    --color-fill-secondary: 251, 251, 251;
-    --color-card: 241, 241, 241;
-    --color-text: 80, 73, 69;
-    --color-text-active: 181, 118, 20;
-    --color-border: 104, 157, 106;
-    --color-border-active: 14, 192, 124;
-    --color-modal: 52, 58, 64;
-  }
-
-  html[data-theme="dark"] {
-    --color-fill: 40, 40, 40;
-    --color-fill-secondary: 52, 58, 64;
-    --color-card: 40, 42, 54;
-    --color-text: 249, 244, 227;
-    --color-text-active: 250, 189, 47;
-    --color-border: 214, 93, 14;
-    --color-border-active: 7, 102, 120;
-    --color-modal: 251, 251, 251;
-  }
-
-  #sun-icon,
-  html[data-theme="dark"] #moon-icon {
-    display: none;
-  }
-
-  #moon-icon,
-  html[data-theme="dark"] #sun-icon {
-    display: block;
-  }
-
-}
 
 @layer components {
 
   .header-link-active {
-    @apply underline underline-offset-4 decoration-wavy decoration-skin-active;
+    @apply underline underline-offset-4 decoration-wavy;
   }
 
   .header-link-hover {
-    @apply underline underline-offset-4 decoration-wavy decoration-skin-base;
+    @apply underline underline-offset-4 decoration-wavy;
   }
 
   .header-btn {
-    @apply cursor-pointer py-1 px-1 bg-skin-fill hover:text-skin-active mx-1 z-10;
+    @apply cursor-pointer py-1 px-1 mx-1 z-10;
   }
 
   .sideBar-widget {
@@ -117,11 +78,11 @@ TODO Revisar si data-theme solo funciona con scss
   }
 
   .waline-comment-content {
-    @apply p-1 overflow-auto max-h-72 break-words hover:text-skin-active;
+    @apply p-1 overflow-auto max-h-72 break-words;
   }
 
   .waline-comment-author {
-    @apply text-end mb-1 break-words hover:text-skin-active;
+    @apply text-end mb-1 break-words;
   }
 
   a {

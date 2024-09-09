@@ -14,7 +14,7 @@ const site: modelSite = {
   author: 'Eli', // required
   avatarLink:
     'https://utfs.io/f/d28d449a-5b5a-464e-b8e3-86d782ef7819-n92lk7.webp', // required
-  bio: 'Actions speak louder than words.',
+  bio: 'Descripción de el autor',
   url: '',
   recentBlogSize: 5,
   archivePageSize: 25,
@@ -39,37 +39,37 @@ const categories: modelCategory[] = [
     href: '/blog/1',
   },
   {
-    name: 'Feed',
+    name: 'Recomendaciones',
     iconClass: 'ri-lightbulb-flash-line',
     href: '/feed/1',
   },
   {
-    name: 'Archive',
+    name: 'Contácteme',
     iconClass: 'ri-archive-line',
     href: '/archive/1',
   },
   {
-    name: 'Message',
+    name: 'Sobre Mi',
     iconClass: 'ri-chat-1-line',
     href: '/message',
   },
   {
-    name: 'Search',
+    name: 'Buscar',
     iconClass: 'ri-search-line',
     href: '/search',
   },
   {
-    name: 'More',
+    name: 'Mas',
     iconClass: 'ri-more-fill',
     href: 'javascript:void(0);',
     children: [
       {
-        name: 'About',
+        name: 'Contacto',
         iconClass: 'ri-information-line',
         href: '/about',
       },
       {
-        name: 'Friends',
+        name: 'Redes',
         iconClass: 'ri-user-5-line',
         href: '/friends',
         target: '_self',
