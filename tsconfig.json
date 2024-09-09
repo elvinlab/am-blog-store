@@ -16,10 +16,11 @@
       "@components/*": ["src/components/*"],
       "@constants/*": ["src/constants/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@helpers/*": ["src/helpers/*"],
       "@assets/*": ["src/assets/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"],
       "@models/*": ["src/models/*"],
+      "@utils/*": ["src/utils/*"],
       "@i18n/*": ["src/i18n/*"],
       "@/*": ["src/*"]
     }

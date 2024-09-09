@@ -1,10 +1,11 @@
 export interface modelSite {
   title: string
   favicon: string
+  iconBrand: string
   description: string
   author: string
-  avatar: string
-  motto: string
+  avatarLink: string
+  bio: string
   url: string
   recentBlogSize: number
   archivePageSize: number

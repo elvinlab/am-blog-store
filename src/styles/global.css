@@ -1,8 +1,4 @@
-@import url('./github-markdown.css');
-
-@import "remixicon/fonts/remixicon.css";
-@import "tocbot/dist/tocbot.css";
-@import "remark-aside.css";
+@import 'remixicon/fonts/remixicon.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,7 +24,44 @@ menu {
   padding: 0;
 }
 
+/* polygon */
+
+::view-transition-group(root) {
+  animation-duration: 0.7s;
+  animation-timing-function: var(--expo-out);
+}
+::view-transition-new(root) {
+  animation-name: reveal-light;
+}
+::view-transition-old(root),
+.dark::view-transition-old(root) {
+  animation: none;
+  z-index: -1;
+}
+.dark::view-transition-new(root) {
+  animation-name: reveal-dark;
+}
+@keyframes reveal-dark {
+  from {
+    clip-path: polygon(50% -71%, -50% 71%, -50% 71%, 50% -71%);
+  }
+  to {
+    clip-path: polygon(50% -71%, -50% 71%, 50% 171%, 171% 50%);
+  }
+}
+@keyframes reveal-light {
+  from {
+    clip-path: polygon(171% 50%, 50% 171%, 50% 171%, 171% 50%);
+  }
+  to {
+    clip-path: polygon(171% 50%, 50% 171%, -50% 71%, 50% -71%);
+  }
+}
+
 @layer base {
+/**
+TODO Revisar si data-theme solo funciona con scss
+ */
 
   :root,
   html[data-theme="light"] {
@@ -76,14 +109,13 @@ menu {
   }
 
   .header-btn {
-    @apply cursor-pointer border rounded py-1 px-2 bg-skin-fill hover:text-skin-active mx-2 z-10;
+    @apply cursor-pointer py-1 px-1 bg-skin-fill hover:text-skin-active mx-1 z-10;
   }
 
-  .aside-widget {
+  .sideBar-widget {
     @apply flex items-center w-full border-b mb-2;
   }
 
-  /* 侧边最近评论列表样式 */
   .waline-comment-content {
     @apply p-1 overflow-auto max-h-72 break-words hover:text-skin-active;
   }

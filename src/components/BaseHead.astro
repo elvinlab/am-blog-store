@@ -1,0 +1,62 @@
+---
+import '@fontsource/love-light'
+import '@fontsource/onest'
+import '@styles/global.css'
+import consts from '@/consts'
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+---
+<head>
+  <!-- Global Metadata -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="icon" type="image/svg+xml" href={consts.$_site.favicon}/>
+  <meta name="generator" content={Astro.generator}/>
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalURL}/>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content={consts.$_site.title}/>
+  <meta name="description" content={consts.$_site.description}/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content={Astro.url}/>
+  <meta property="og:title" content={consts.$_site.title}/>
+  <meta property="og:description" content={consts.$_site.description}/>
+  <meta property="og:image" content={new URL(consts.$_site.avatarLink, Astro.site?.href).href}/>
+  <meta property="og:image:alt" content={consts.$_site.description}/>
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:url" content={Astro.url}/>
+  <meta property="twitter:title" content={consts.$_site.title}/>
+  <meta property="twitter:description" content={consts.$_site.description}/>
+  <meta property="twitter:image" content={new URL(consts.$_site.avatarLink, Astro.site?.href).href}/>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="msapplication-TileColor" content="#da532c"/>
+  <meta name="msapplication-consts" content="/browserconfig.xml"/>
+  <meta name="theme-color" content="#ffffff"/>
+
+  <link rel="sitemap" href="/sitemap-0.xml"/>
+  <title>{consts.$_site.title}</title>
+
+  <!-- Google tag (gtag.js) -->
+  {
+    consts.$_settings.ga &&
+    <>
+      <script src={"https://www.googletagmanager.com/gtag/js?id=" + consts.$_settings.ga}></script>
+      <script is:inline define:vars={{ga: consts.$_settings.ga}}>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('consts', ga);
+      </script>
+    </>
+  }
+</head>

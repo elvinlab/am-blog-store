@@ -14,12 +14,18 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.15.4(rollup@4.21.2)(typescript@5.5.4))(tailwindcss@3.4.10)
+      '@fontsource/love-light':
+        specifier: ^5.0.22
+        version: 5.0.22
       '@fontsource/onest':
         specifier: ^5.0.6
         version: 5.0.6
       astro:
         specifier: ^4.15.4
         version: 4.15.4(rollup@4.21.2)(typescript@5.5.4)
+      remixicon:
+        specifier: ^4.3.0
+        version: 4.3.0
       tailwindcss:
         specifier: ^3.4.10
         version: 3.4.10
@@ -33,6 +39,9 @@ importers:
       '@biomejs/biome':
         specifier: 1.8.3
         version: 1.8.3
+      '@types/lodash':
+        specifier: ^4.17.7
+        version: 4.17.7
 
 packages:
 
@@ -397,6 +406,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@fontsource/love-light@5.0.22':
+    resolution: {integrity: sha512-oI9L1UxAGR7Gk8oXvebDt6EOxYF+PsNA4j29mExXRI3+SyrBih380/5skeSGuygjp/3ra5viyN8vpKFAHqRNyw==}
+
   '@fontsource/onest@5.0.6':
     resolution: {integrity: sha512-GRtm6bk8QqG2dXXv554HjGoY7UpBDF7bbau3QzQf2UZr0sRnYBje87wUocaKUiVxAzmdL4yMMXiDpRKokF6uow==}
 
@@ -664,6 +676,9 @@ packages:
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
+
+  '@types/lodash@4.17.7':
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
@@ -1679,6 +1694,9 @@ packages:
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
 
+  remixicon@4.3.0:
+    resolution: {integrity: sha512-jRYQ37dTFSkJtvcxwTUAkIiXkYRvA9EDvVuXPNrmt2xf/VS//CRgFtsX2TAFBoQOhh9SDh7l6La4Xu12snEyxg==}
+
   request-light@0.5.8:
     resolution: {integrity: sha512-3Zjgh+8b5fhRJBQZoy+zbVKpAQGLyka0MPgW3zruTF4dFFJ8Fqcfu9YsAvi/rvdcaTeWG3MkbZv4WKxAn/84Lg==}
 
@@ -2535,6 +2553,8 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
+  '@fontsource/love-light@5.0.22': {}
+
   '@fontsource/onest@5.0.6': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
@@ -2750,6 +2770,8 @@ snapshots:
   '@types/hast@3.0.4':
     dependencies:
       '@types/unist': 3.0.3
+
+  '@types/lodash@4.17.7': {}
 
   '@types/mdast@4.0.4':
     dependencies:
@@ -4055,6 +4077,8 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.0
       unified: 11.0.5
+
+  remixicon@4.3.0: {}
 
   request-light@0.5.8: {}
 

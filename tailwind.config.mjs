@@ -1,14 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-function withOpacity(variableName) {
-  return ({ opacityValue }) => {
-    if (opacityValue !== undefined) {
-      return `rgba(var(${variableName}), ${opacityValue})`
-    }
-    return `rgb(var(${variableName}))`
-  }
-}
-
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkmode: 'class',
@@ -34,34 +25,35 @@ export default {
     },
     textColor: {
       skin: {
-        base: withOpacity('--color-text'),
-        active: withOpacity('--color-text-active'),
+        base: 'rgb(var(--color-text))',
+        active: 'rgb(var(--color-text-active))',
       },
     },
 
     backgroundColor: {
       skin: {
-        fill: withOpacity('--color-fill'),
-        secondary: withOpacity('--color-fill-secondary'),
-        card: withOpacity('--color-card'),
-        modal: withOpacity('--color-modal'),
+        fill: 'rgb(var(--color-fill))',
+        secondary: 'rgb(var(--color-fill-secondary))',
+        card: 'rgb(var(--color-card))',
+        modal: 'rgb(var(--color-modal))',
       },
     },
     textDecorationColor: {
       skin: {
-        base: withOpacity('--color-border'),
-        active: withOpacity('--color-text-active'),
+        base: 'rgb(var(--color-border))',
+        active: 'rgb(var(--color-text-active))',
       },
     },
     borderColor: {
       skin: {
-        normal: withOpacity('--color-text'),
-        base: withOpacity('--color-border'),
+        normal: 'rgb(var(--color-text))',
+        base: 'rgb(var(--color-border))',
       },
     },
     extend: {
       fontFamily: {
         onest: ['Onest', 'sans-serif'],
+        loveLight: ['Love Light', 'cursive'],
       },
       colors: {
         custom: {

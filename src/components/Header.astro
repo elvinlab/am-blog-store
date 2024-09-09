@@ -1,0 +1,126 @@
+---
+import config from '@/consts'
+import HeaderLink from '@components/HeaderLink.astro'
+import MenuBtn from '@components/MenuBtn.astro'
+import SidebarBtn from '@components/SidebarBtn.astro'
+import ThemeSwitch from '@components/ThemeSwitch.astro'
+import I18nKey from '@i18n/i18nKey'
+import { $_t } from '@i18n/translation'
+//TODO Refactorizar el código
+// import { getCollectionByName } from '@utils/getCollectionByName'
+// import getCountByCategory from '@utils/getCountByCategory'
+// import getCountByTagName from '@utils/getCountByTagName'
+// import getUniqueTags from '@utils/getUniqueTags'
+
+// const blogs = await getCollectionByName('blog')
+// const tagArr = getUniqueTags(blogs)
+// const categoryCount = getCountByCategory(blogs)
+// const tagCount = getCountByTagName(blogs)
+---
+
+<header class="fixed top-0 w-full bg-skin-fill text-skin-base z-10">
+  <div class="flex items-center justify-between container">
+    <div class="block xl:hidden">
+      <MenuBtn></MenuBtn>
+    </div>
+    <div class="p-2 text-xl sm:text-3xl">
+      <i class= {config.$_site.iconBrand}></i>
+      <a class="font-loveLight font-bold" href="/">{config.$_site.title}</a>
+    </div>
+
+    <div class="flex items-center">
+      <div class="hidden xl:block">
+        <div class="flex items-center space-x-5 pr-4">
+          {
+            config.$_categories.map(category => (
+              <HeaderLink href={category.href} icon={category.iconClass} target={category.target ? category.target : '_self'} childrenArr={category.children ? category.children : []}>{category.name}</HeaderLink>
+            ))
+          }
+        </div>
+      </div>
+      <ThemeSwitch></ThemeSwitch>
+      <div class="block xl:hidden">
+        <SidebarBtn></SidebarBtn>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden text-center overflow-y-auto pb-8" style="height: calc(100vh - 64px)">
+    {
+      config.$_categories.map((category) => (
+        <div class="py-2">
+          <a class=" hover:text-skin-active" href={category.href}>
+            <i class={category.iconClass}/>
+            <span>{category.name}</span>
+          </a>
+          {
+            category.children && category.children.length > 0 &&
+            <div class="divider-horizontal"></div>
+          }
+          <div class="space-y-4 text-sm">
+            {
+              category.children && category.children.map(sub =>
+                (
+                  <a class="block hover:text-skin-active" href={sub.href}>
+                    <i class={sub.iconClass}/>
+                    <span>{sub.name}</span>
+                  </a>
+                )
+              )
+            }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div id="personal-info" class="hidden break-all overflow-y-auto pb-8" style="height: calc(100vh - 64px)">
+    <img class="avatar my-4 mx-auto" src={config.$_site.avatarLink} alt="avatar"/>
+    <div class="mb-2 text-center">{config.$_site.bio}</div>
+    <div class="flex items-center justify-center flex-wrap">
+      {
+        config.$_socialNetwork.map((infoItem) => (
+          <a title={infoItem.name} href={infoItem.outlink} target="_blank">
+            <i class={infoItem.icon + " text-2xl mr-2 cursor-pointer"}/>
+          </a>
+        ))
+      }
+    </div>
+    <div class="divider-horizontal-mini"></div>
+    <div class="text-center">
+      <!-- {
+        Object.keys(categoryCount).length > 0 && (
+          <div>
+            <i class="ri-folder-line menu-icon"/>{$_t(I18nKey.CATEGORIES)}
+          </div>
+        )
+      }
+      {
+        Object.keys(categoryCount).map((category) => (
+          <div class="my-2 break-all truncate">
+            <a class="hover:text-skin-active" title={category + " (" + categoryCount[category] + ")"} href={"/category/" + category}>
+              {category + " (" + categoryCount[category] + ")"}
+            </a>
+          </div>
+
+        ))
+      }
+      {
+        tagArr.length > 0 && (
+          <div class="divider-horizontal-mini"></div>
+          <div class="text-center">
+            <i class="ri-price-tag-3-line menu-icon"/>
+            {$_t(I18nKey.TAGS)}
+          </div>
+        )
+      }
+      {
+        tagArr &&
+        tagArr.map((tag: string | null | undefined) => (
+          <div class="my-2 break-all truncate">
+            <a class="hover:text-skin-active my-2" title={tag} href={"/tags/" + tag}>{tag + " (" + tagCount[tag] + ")"}</a>
+          </div>
+        ))
+      } -->
+    </div>
+
+  </div>
+</header>

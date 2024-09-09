@@ -1,2 +1,5 @@
 export * from '@/models/site'
 export * from '@/models/settings'
+export * from '@models/socialNetwork'
+export * from '@/models/categories'
+export * from '@/models/comment'

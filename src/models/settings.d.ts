@@ -1,5 +1,5 @@
 export interface modelSettings {
-  lang: 'en' | 'es'
+  lang: string
   codeFoldingStartLines: number
   ga: string
 }

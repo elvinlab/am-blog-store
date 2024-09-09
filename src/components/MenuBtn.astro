@@ -1,0 +1,39 @@
+---
+---
+<script>
+
+import domHelpers from '@helpers/domHelpers';
+
+const menuIcon = domHelpers.$<HTMLElement>("#menu-icon");
+const menuCloseIcon = domHelpers.$<HTMLElement>("#menu-icon-close");
+const menu = domHelpers.$<HTMLElement>("#mobile-menu");
+const showAsideBtn = domHelpers.$<HTMLElement>("#sideBar-btn");
+const closeAsideBtn = domHelpers.$<HTMLElement>("#sideBar-close-btn");
+const personalInfo = domHelpers.$<HTMLElement>("#personal-info");
+
+if (menuIcon && menuCloseIcon && menu && showAsideBtn && closeAsideBtn && personalInfo) {
+  menuIcon.addEventListener("click", () => {
+    if (showAsideBtn.classList.contains('hidden')) {
+      showAsideBtn.classList.toggle("hidden");
+      closeAsideBtn.classList.toggle("hidden");
+      personalInfo.classList.toggle("hidden");
+    }
+    menuIcon.classList.toggle("hidden");
+    menuCloseIcon.classList.toggle("hidden");
+    menu.classList.toggle("hidden");
+  });
+
+  menuCloseIcon.addEventListener("click", () => {
+    menuCloseIcon.classList.toggle("hidden");
+    menu.classList.toggle("hidden");
+    menuIcon.classList.toggle("hidden");
+  });
+}
+</script>
+
+<button type="button" id="menu-icon" class="header-btn" title="Menu">
+  <i class="ri-menu-fill"/>
+</button>
+<button type="button" id="menu-icon-close" class="header-btn hidden" title="Menu">
+  <i class="ri-close-fill"></i>
+</button>

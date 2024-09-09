@@ -1,0 +1,30 @@
+---
+import BaseHead from '@components/BaseHead.astro'
+import Header from '@components/Header.astro'
+---
+<script>
+  import domHelpers from '@helpers/domHelpers';
+
+  domHelpers.$$<HTMLAnchorElement>("a").forEach(item => {
+  item.setAttribute("rel", "nofollow noreferrer");
+});
+</script>
+
+<html lang="en">
+<BaseHead/>
+<body class="font-onest bg-skin-secondary relative">
+  <Header/>
+<main class="container p-4 pt-20 text-skin-base pb-32 min-h-full relative" id="app">
+  <div class="grid grid-cols-4 gap-8">
+    <div class="col-span-4 xl:col-span-3 space-y-6">
+      <slot></slot>
+    </div>
+    <div>
+      <div class="hidden xl:block space-y-6">
+
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
