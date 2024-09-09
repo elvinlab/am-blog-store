@@ -1,5 +1,5 @@
 ---
-const THEMES = ['Light', 'Dark', 'System']
+import consts from '@/consts'
 ---
 <script>
   import domHelpers from '@helpers/domHelpers';
@@ -98,7 +98,7 @@ document.addEventListener('astro:after-swap', () => {
   >
     <ul>
       {
-        THEMES.map((theme) => (
+        consts.$_themes.map((theme) => (
           <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
             {theme}
           </li>

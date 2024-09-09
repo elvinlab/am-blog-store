@@ -122,8 +122,11 @@ const comment: modelComment = {
   },
 }
 
+const themes = ['Light', 'Dark', 'System']
+
 export default {
   $_site: site,
+  $_themes: themes,
   $_comment: comment,
   $_settings: settings,
   $_socialNetwork: socialNetwork,
