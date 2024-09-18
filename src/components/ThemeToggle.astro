@@ -45,13 +45,9 @@ const switchTheme = (): void => {
 };
 
 const updateTheme = (): void => {
+  switchTheme();
 
 
-  if (customDocument.startViewTransition) {
-    customDocument.startViewTransition(switchTheme);
-  } else {
-    switchTheme();
-  }
 };
 
 updateTheme();
