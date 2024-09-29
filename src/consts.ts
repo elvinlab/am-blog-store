@@ -58,24 +58,24 @@ const categories: modelCategory[] = [
     iconClass: 'ri-search-line',
     href: '/search',
   },
-  {
-    name: 'Mas',
-    iconClass: 'ri-more-fill',
-    href: 'javascript:void(0);',
-    children: [
-      {
-        name: 'Contacto',
-        iconClass: 'ri-information-line',
-        href: '/about',
-      },
-      {
-        name: 'Redes',
-        iconClass: 'ri-user-5-line',
-        href: '/friends',
-        target: '_self',
-      },
-    ],
-  },
+  // {
+  //   name: 'Mas',
+  //   iconClass: 'ri-more-fill',
+  //   href: 'javascript:void(0);',
+  //   children: [
+  //     {
+  //       name: 'Contacto',
+  //       iconClass: 'ri-information-line',
+  //       href: '/about',
+  //     },
+  //     {
+  //       name: 'Redes',
+  //       iconClass: 'ri-user-5-line',
+  //       href: '/friends',
+  //       target: '_self',
+  //     },
+  //   ],
+  // },
 ]
 
 const socialNetwork: modelSocialNetwork[] = [

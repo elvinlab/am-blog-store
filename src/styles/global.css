@@ -62,11 +62,11 @@ menu {
 @layer components {
 
   .header-link-active {
-    @apply underline underline-offset-4 decoration-wavy;
+    @apply text-[#cea100] font-bold transition delay-150 duration-300;
   }
 
   .header-link-hover {
-    @apply underline underline-offset-4 decoration-wavy;
+    @apply text-[#cea100] transition delay-150 duration-300;
   }
 
   .header-btn {

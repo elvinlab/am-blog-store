@@ -5,7 +5,7 @@ const { pathname } = Astro.url
 const hrefMath = href.split('/')
 const pathnameMatch = pathname.split('/')
 const isActive = hrefMath[1] === pathnameMatch[1]
-const THEMES = ['Light', 'Dark', 'System']
+
 type Child = {
   iconClass?: string
   target?: string
