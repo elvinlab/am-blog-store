@@ -10,7 +10,8 @@ const site: modelSite = {
   title: 'Eli Recomienda', // required
   favicon: './favicon.svg',
   iconBrand: 'ri-hand-heart-fill', // required
-  description: 'Descripción de la pagina',
+  description:
+    '¡Hola! 🌟 Bienvenido a mi blog de recomendaciones. Descubre las mejores selecciones y toma decisiones con confianza. Si tienes dudas, no dudes en contactarme a través de los enlaces disponibles. 😊👇',
   author: 'Eli', // required
   avatarLink:
     'https://utfs.io/f/d28d449a-5b5a-464e-b8e3-86d782ef7819-n92lk7.webp', // required
